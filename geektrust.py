@@ -7,12 +7,12 @@ ruler = None
 def invite(kingdom, message):
     global allies
 
-    for c in emblem[kingdom]:            # Gets the animal for the given kingdom and iterate through the charaters.
+    for c in emblem[kingdom]:             # Gets the animal for the given kingdom and iterate through the charaters.
         if c in message:               # Checks if the character is present in the message.
-            message = message.replace(c,'',1)         # removes the first occurence of the charater matched.
+            message = message.replace(c,'',1)         # Removes the first occurence of the charater matched.
         else:
             return
-    allies.append(kingdom)          # Allies that have accepted the invitation are appended to the list.
+    allies.append(kingdom)          # Kingdoms are appended to the list.
 
 # Function to print Ruler and Allies information.
 def allies_info():
@@ -22,7 +22,7 @@ def allies_info():
 
     if len(unique_allies) == 0:
         allies_string = None
-    elif len(unique_allies) >= 3:           # Electing the ruler if he gets 3 or more allies.
+    elif len(unique_allies) >= 3:           # Electing the ruler if he wins 3 or more kingdoms.
         ruler = 'King Shan'
 
     print('Who is the ruler of Southeros?')
@@ -37,8 +37,8 @@ def get_message_and_invite():
 
         if line:
             try:
-                kingdom, message = line.split(',')
-                message = message.strip(' \"').upper()
+                kingdom, message = line.split(',')         # Spliting Kingdom and Message.
+                message = message.strip(' \"').upper()      # Removes the (") from the message.
                 kingdom = kingdom.capitalize()
                 invite(kingdom,message)        # Invite kingdom with message.
             except ValueError:
