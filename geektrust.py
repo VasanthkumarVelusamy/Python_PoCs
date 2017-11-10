@@ -16,9 +16,7 @@ def invite(kingdom, message):
 
 # Function to print Ruler and Allies information.
 def allies_info():
-
     global allies, ruler
-
     unique_allies = {x:y for (y, x) in enumerate(allies)}.keys()      # Adding the allies as keys in dictionary to avoid duplicates and also to keep insertion order.
     allies_string = ', '.join(map(str,unique_allies))        # String to print allies.
 
