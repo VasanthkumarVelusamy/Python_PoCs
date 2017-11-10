@@ -24,7 +24,7 @@ def allies_info():
 
     if len(unique_allies) == 0:
         allies_string = None
-    elif len(unique_allies) >= 3:
+    elif len(unique_allies) >= 3:           # Electing the ruler if he gets 3 or more allies.
         ruler = 'King Shan'
 
     print('Who is the ruler of Southeros?')
@@ -50,6 +50,7 @@ def get_message_and_invite():
         else:
             break
 
+# Main program flow
 allies_info()
 print('')
 print('Input Messages to kingdoms from King Shan:')
